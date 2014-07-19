@@ -20,5 +20,6 @@ class Solution:
             reserved_words = words[::-1]
             for word in reserved_words:
                 rs += word
+				rs += " "
             return rs[:-1]
             
