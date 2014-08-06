@@ -5,7 +5,7 @@ class Solution:
     def searchInsert(self, A, target):
         B = [abs(x-target) for x in A]
         m = min(B)
-        i = B.index(min(B))
+        i = B.index(m)
         if m == 0:
             return i
         elif A[i]-target >0:
