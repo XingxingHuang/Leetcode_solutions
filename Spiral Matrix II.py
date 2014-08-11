@@ -34,7 +34,6 @@ class Solution:
             k -= 1
         return matrix
                 
-            
 if __name__ == "__main__":
     slt = Solution()
     for i in range(6):
