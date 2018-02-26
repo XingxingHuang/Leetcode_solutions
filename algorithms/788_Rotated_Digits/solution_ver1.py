@@ -1,16 +1,16 @@
+# https://leetcode.com/problems/rotated-digits/description/
+
 class Solution:
     def rotatedDigits(self, N):
         """
         :type N: int
         :rtype: int
         """
-        total = 0
-        rotate_change = ['2', '5', '6', '9']
-        rotate_unchange = ['0', '1', '8']
-        for number in range(1, N + 1):
-            if all(map(lambda digit: digit in rotate_change + rotate_unchange, str(number))):
-                if not all(map(lambda digit: digit in rotate_unchange, str(number))):
-                    total += 1
-        return total
+        # brute force O(NlogN)
+        return sum(
+            all(map(lambda digit: digit in '0125689', str(number))) and  # all digits are valid
+            not all(map(lambda digit: digit in '018', str(number)))      # not all digits rotate to itself
+            for number in range(1, N + 1)
+            )
 
 

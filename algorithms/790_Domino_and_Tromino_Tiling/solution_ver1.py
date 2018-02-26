@@ -4,6 +4,7 @@ class Solution:
         :type N: int
         :rtype: int
         """
+        # much faster than dp, how to prof and could i find this pattern out if on whiteboard?
         s = [1, 2, 5]
         ans = 1
         if N < 3:

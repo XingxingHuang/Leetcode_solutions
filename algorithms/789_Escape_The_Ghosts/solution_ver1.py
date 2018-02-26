@@ -5,11 +5,7 @@ class Solution:
         :type target: List[int]
         :rtype: bool
         """
-        step = self.__l1([0, 0], target)
-        steps = [self.__l1(ghost, target) for ghost in ghosts]
-        if min(steps) <= step:
-            return False
-        return True
+        return all(map(lambda ghost: self.__l1(ghost, target) > self.__l1([0,0], target), ghosts))
 
     @staticmethod
     def __l1(p1, p2):
