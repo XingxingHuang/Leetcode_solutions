@@ -1,3 +1,5 @@
+# https://leetcode.com/problems/escape-the-ghosts/description/
+
 class Solution:
     def escapeGhosts(self, ghosts, target):
         """
