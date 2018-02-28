@@ -16,5 +16,4 @@ class Solution:
                 charset[char] = 1
             else:
                 return len(charset)
-                break
         return len(s)
