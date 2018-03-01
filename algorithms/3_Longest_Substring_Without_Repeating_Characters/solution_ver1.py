@@ -1,3 +1,4 @@
+# https://leetcode.com/problems/longest-substring-without-repeating-characters/description/
 class Solution:
     # brute force solution, scan the longest non repeated substring starting from each possible starting location
     def lengthOfLongestSubstring(self, s):
