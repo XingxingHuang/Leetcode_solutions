@@ -1,9 +1,12 @@
+# https://leetcode.com/problems/number-of-lines-to-write-string/description/
+
 class Solution:
     def numberOfLines(self, widths, S):
         """
         :type widths: List[int]
         :type S: str
         :rtype: List[int]
+        one pass, iterate over char of S
         """
         line_nums = 1
         char_nums = 0
