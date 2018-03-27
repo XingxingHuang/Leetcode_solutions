@@ -10,26 +10,23 @@ class Solution(object):
         has zero mean
     """
     def splitArraySameAverage(self, A):
+        from fractions import Fraction
         N = len(A)
-        if N == 1:
-            return False
-
         S = sum(A)
-        # normalize
-        A = [z - S / N for z in A]
+        A = [z - Fraction(S, N) for z in A]
 
-        # | for set is union, so we are building up all possible sums in this left half
+        if N == 1: return False
+
+        #Want zero subset sum
         left = {A[0]}
         for i in range(1, N//2):
-            left |= {z + A[i] for z in left} | {A[i]}
-        if 0 in left:
-            return True
+            left |= {z + A[i] for z in left}| {A[i]}
+        if 0 in left: return True
 
         right = {A[-1]}
         for i in range(N//2, N-1):
             right |= {z + A[i] for z in right} | {A[i]}
-        if 0 in right:
-            return True
+        if 0 in right: return True
 
         sleft = sum(A[i] for i in range(N//2))
         sright = sum(A[i] for i in range(N//2, N))
