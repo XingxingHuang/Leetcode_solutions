@@ -1,4 +1,6 @@
+# https://leetcode.com/problems/soup-servings/description/
 import random
+
 
 class Solution:
     def soupServings(self, N):
