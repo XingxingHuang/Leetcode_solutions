@@ -1,3 +1,6 @@
+# https://leetcode.com/problems/shortest-distance-to-a-character/description/
+
+
 class Solution:
     def shortestToChar(self, S, C):
         """
@@ -6,4 +9,5 @@ class Solution:
         :rtype: List[int]
         """
         l = [i for i, e in enumerate(S) if e == C]
-        return [min(abs(i - ll) for ll in l) for i in range(len(S))]
+        n = len(S)
+        return [min(abs(i - ll) for ll in l) for i in range(n)]
