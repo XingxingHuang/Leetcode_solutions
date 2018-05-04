@@ -7,7 +7,7 @@ class Solution:
         :rtype: List[int]
         for matrix of shape [3, 3] the correct order of indices are:
         [0,0] > [0,1], [1,0] < [2,0], [1,1], [0,2] > [1,2], [2,1] < [2,2]
-        by j           by i                  by j, i           by i,j
+        by j           by i              by j           by i         by j
         > , < indicates a traversal direction change
         notice sum of [i, j] remain same along before a direction change
 
@@ -24,9 +24,8 @@ class Solution:
         indices.sort(
             key=lambda x: (
                 sum(x),
-                (x[1], x[0])[sum(x) & 1],
-                (x[1], x[0])[sum(x) & 0])
-            )
+                (x[1], x[0])[sum(x) & 1]
+            ))
         return [matrix[i][j] for [i, j] in indices]
 
 
