@@ -10,7 +10,7 @@ class Solution(object):
         """
         :type n: int
         :rtype: int
-        # brute force, time limit exceed
+        # accepted but still slow as hell
         """
         candidates = set(range(n))
         for i in range(n):
