@@ -16,19 +16,17 @@ class Solution:
         :type digits: str
         :rtype: List[str]
         """
-
         if digits == '':
             return []
         num_digits = len(digits)
-        combos = []
-        letters = ''
-        self._backtracing(num_digits, combos, digits, letters, 0)
-        return combos
+        self._combos = []
+        self._backtracing(num_digits, digits, '', 0)
+        return self._combos
 
-    def _backtracing(self, num_digits, combos, digits, letters, current_digit_idx):
+    def _backtracing(self, num_digits, digits, letters, current_digit_idx):
         if current_digit_idx == len(digits):
-            combos.append(letters)
+            self._combos.append(letters)
         else:
             for char in self.digit_char_mapping[digits[current_digit_idx]]:
-                self._backtracing(num_digits, combos, digits, letters + char, current_digit_idx + 1)
+                self._backtracing(num_digits, digits, letters + char, current_digit_idx + 1)
 
