@@ -4,6 +4,7 @@ class Solution:
         :type paragraph: str
         :type banned: List[str]
         :rtype: str
+        # not sure why i did this, but sort seems needs longer time!
         """
         paragraph = "".join(char.lower() for char in paragraph if char not in "!?',;.")
         # words = [word for word in paragraph.split(" ") if word not in banned]
