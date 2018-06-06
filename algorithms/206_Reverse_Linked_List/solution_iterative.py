@@ -17,9 +17,9 @@ class Solution:
         prev = None
         curr = head
         while curr:
-            temp_node = curr.next
+            next = curr.next
             curr.next = prev
             prev = curr
-            curr = temp_node
+            curr = next
         return prev
 
