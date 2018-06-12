@@ -8,6 +8,7 @@ class Solution:
         :type nums: List[int]
         :type target: int
         :rtype: List[int]
+        it is crucial to check before insert, this avoids 4 = 2 + 2 when it first encounter 2
         """
         num_index_map = {}
         for idx, num in enumerate(nums):
